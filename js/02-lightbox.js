@@ -17,9 +17,7 @@ let lightbox;
 gallery.addEventListener("click", (event) => {
     event.preventDefault();
     if (event.target.tagName === 'IMG') {
-        if (lightbox) {
-            lightbox.close();
-        }
+        
 
         lightbox = new SimpleLightbox('.gallery__link', {
             captions: true,
@@ -29,7 +27,15 @@ gallery.addEventListener("click", (event) => {
             captionDelay: 250,
         });
 
+        lightbox.on('nextDone.simplelightbox', () => {
+            console.log('Next image has loaded');
+        });
+
         lightbox.open(event.target);
+        
+        lightbox.on('nextDone.simplelightbox', () => {
+            console.log('Next image has loaded');
+        });
     }
 });
 
