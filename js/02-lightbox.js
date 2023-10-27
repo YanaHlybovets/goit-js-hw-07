@@ -29,7 +29,7 @@ gallery.addEventListener("click", (event) => {
             captionDelay: 250,
         });
 
-        lightbox.open();
+        lightbox.open(event.target);
     }
 });
 
