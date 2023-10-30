@@ -16,28 +16,15 @@ let lightbox;
 
 gallery.addEventListener("click", (event) => {
     event.preventDefault();
-    if (event.target.tagName === 'IMG') {
-        
+});
 
-        lightbox = new SimpleLightbox('.gallery__link', {
+lightbox = new SimpleLightbox('.gallery__link', {
             captions: true,
             captionType: 'attr',
             captionsData: 'alt',
             captionPosition: 'bottom',
             captionDelay: 250,
         });
-
-        lightbox.on('nextDone.simplelightbox', () => {
-            console.log('Next image has loaded');
-        });
-
-        lightbox.open(event.target);
-        
-        lightbox.on('nextDone.simplelightbox', () => {
-            console.log('Next image has loaded');
-        });
-    }
-});
 
 
 
